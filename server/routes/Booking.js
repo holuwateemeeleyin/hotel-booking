@@ -15,7 +15,7 @@ router.post('/create-booking', (req, res)=> {
     })
 })
 
-// Get all booking Details -- not working
+// Get all booking Details 
 router.get('/bookings' , (req, res)=> {
 
     let skip = parseInt(req.query.skip)
@@ -28,7 +28,7 @@ router.get('/bookings' , (req, res)=> {
         res.send(doc)    })
 })
 
-// 
+//Get Rooms In Booking 
 router.get('/RoomsInBooking', (req,res) => {
     let roomNo = req.query.roomNo
     Booking.findOne({roomNo}).populate('room')
